@@ -1,3 +1,13 @@
-<a class="list-menu-item" *ngFor="let task of tasks" [routerLink]="['/tasks',task._id]" routerLinkActive="is-active">
-  <p>{{task.title}}</p>
-</a>
+<nav class="header" style="text-align: center;">
+  <h1>Welcome {{name}}</h1>
+  <h3>Here are your tasks!</h3>
+  <button (click)="userLogout()">Logout</button>
+</nav>
+<div class="outerContainer">
+  <div class="taskbox" *ngFor="let task of tasks" [routerLink]="['/tasks',task._id]" routerLinkActive="is-active">
+    <h3>Task {{task._id.slice(-3)}}</h3>
+    <p>Title : {{task.title}}</p>
+    <p>Status : {{task.completed ? 'Completed' : 'Ongoing'}}</p>
+    <button>Complete</button>
+  </div>
+</div>
