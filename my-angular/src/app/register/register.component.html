@@ -1,0 +1,27 @@
+<link rel="stylesheet">
+<div class="loginOuterDiv">
+  <div class="login">
+    <!-- <form> -->
+    <h3>REGISTER</h3>
+    <div class="form-group flex-group">
+      <div class="group-left">
+        <div>First Name</div>
+        <input type="text" style="width: 145px;margin-right: 10px;" #nameInput />
+      </div>
+      <div class="group-left">
+        <div>Last Name</div>
+        <input type="text" style="width: 145px;" />
+      </div>
+    </div>
+    <div class="form-group">
+      <div>Username</div>
+      <input type="text" #usernameInput />
+    </div>
+    <div class="form-group password">
+      <div>Password</div>
+      <input type="text" #passwordInput />
+    </div>
+    <button (click)=registerUser(nameInput.value,usernameInput.value,passwordInput.value)>Submit</button>
+    <!-- </form> -->
+  </div>
+</div>

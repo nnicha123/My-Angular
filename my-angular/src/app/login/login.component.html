@@ -1,0 +1,17 @@
+<link rel="stylesheet">
+<div class="loginOuterDiv">
+  <div class="login">
+    <!-- <form> -->
+    <h3>LOGIN</h3>
+    <div class="form-group">
+      <div>Username</div>
+      <input type="text" #usernameInput />
+    </div>
+    <div class="form-group password">
+      <div>Password</div>
+      <input type="password" #passwordInput />
+    </div>
+    <button (click)="userLogin(usernameInput.value,passwordInput.value)">Submit</button>
+    <!-- </form> -->
+  </div>
+</div>

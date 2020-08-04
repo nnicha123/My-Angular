@@ -16,4 +16,14 @@ export class TaskService {
   getTasks(userId: string) {
     return this.webReqService.get(`${userId}/tasks`);
   }
+  loginUser(username: string, password: string) {
+    return this.webReqService.post('users/login', { username, password });
+  }
+  registerUser(name: string, username: string, password: string) {
+    return this.webReqService.post('users/register', {
+      name,
+      username,
+      password,
+    });
+  }
 }
