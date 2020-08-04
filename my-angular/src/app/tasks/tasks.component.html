@@ -1,3 +1,5 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <nav class="header" style="text-align: center;">
   <h1>Welcome {{name}}</h1>
   <h3>Here are your tasks!</h3>
@@ -6,7 +8,11 @@
   <button (click)="userLogout()" class="logoutButton">Logout</button>
   <div class="outerContainer">
     <div class="taskbox" *ngFor="let task of tasks" [routerLink]="['/tasks',task._id]" routerLinkActive="is-active">
-      <h3>Task {{task._id.slice(-3)}}</h3>
+      <div style="width:100%;display: flex;justify-content: space-between;">
+        <i class="material-icons bin">delete_sweep</i>
+        <i class="material-icons bin">edit</i>
+      </div>
+      <h3 style="padding-top: 0px;">Task {{task._id.slice(-3)}}</h3>
       <p>Title : {{task.title}}</p>
       <p>Status : {{task.completed ? 'Completed' : 'Ongoing'}}</p>
       <div *ngIf="!task.completed; then ongoing; else completed">

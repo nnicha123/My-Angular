@@ -8,10 +8,21 @@ import { TasksComponent } from './tasks/tasks.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NewTaskComponent } from './new-task/new-task.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
-  declarations: [AppComponent, TasksComponent, LoginComponent, RegisterComponent, NewTaskComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    TasksComponent,
+    LoginComponent,
+    RegisterComponent,
+    NewTaskComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

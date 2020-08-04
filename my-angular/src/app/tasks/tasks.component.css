@@ -50,6 +50,7 @@ nav {
   padding-top: 20px;
   width: 100%;
   min-height: 80vh;
+  padding-bottom: 20px;
 }
 .addTask {
   position: absolute;
@@ -134,5 +135,16 @@ nav {
   transition: all ease 0.2s;
 }
 .logoutButton:active {
+  transform: scale(0.9);
+}
+.material-icons.bin {
+  font-size: 25px;
+}
+.material-icons.bin:hover {
+  color: #b12a5b;
+  padding: 0;
+}
+.material-icons.bin:active {
+  color: #a81949;
   transform: scale(0.9);
 }
