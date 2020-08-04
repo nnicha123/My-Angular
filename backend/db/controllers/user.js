@@ -38,7 +38,9 @@ const login = async (req, res) => {
       const token = jwt.sign(payload, "pook", { expiresIn: 3600 })
       res.status(200).send({
         message: 'Successfully logged in',
-        token
+        token,
+        id: foundUser._id,
+        name: foundUser.name
       })
     } else {
       res.status(400).send("Incorrect username or password")
