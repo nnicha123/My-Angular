@@ -20,4 +20,8 @@ export class WebRequestService {
     console.log(`${this.ROOT_URL}/${uri}`);
     return this.http.put(`${this.ROOT_URL}/${uri}`, items);
   }
+  delete(uri: string) {
+    console.log(`${this.ROOT_URL}/${uri}`);
+    return this.http.delete(`${this.ROOT_URL}/${uri}`);
+  }
 }

@@ -1,28 +1,40 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <nav class="header" style="text-align: center;">
-  <h1 style="padding:30px">Welcome {{name}}, Here are your tasks!</h1>
+  <h1 style="padding:30px;font-weight: bold;letter-spacing: 2px;">Welcome {{name}}, Here are your tasks!</h1>
 </nav>
 <div class="outermostContainer">
   <button (click)="userLogout()" class="logoutButton">Logout</button>
   <div class="outerContainer">
-    <div class="taskbox" *ngFor="let task of tasks" [routerLink]="['/tasks',task._id]" routerLinkActive="is-active">
-      <div style="width:100%;display: flex;justify-content: space-between;">
-        <i class="material-icons bin">delete_sweep</i>
-        <i class="material-icons bin">edit</i>
-      </div>
-      <h3 style="padding-top: 0px;">Task {{task._id.slice(-3)}}</h3>
-      <p>Title : {{task.title}}</p>
-      <p>Status : {{task.completed ? 'Completed' : 'Ongoing'}}</p>
-      <div *ngIf="!task.completed; then ongoing; else completed">
+    <div *ngFor="let task of tasks" [routerLink]="['/tasks',task._id]" routerLinkActive="is-active">
+      <div *ngIf="!task.updating" class="taskbox">
+        <div style=" width:100%;display: flex;justify-content: space-between;">
+          <i class="material-icons bin" (click)=deleteTask(task._id)>delete_sweep</i>
+          <i class="material-icons bin" (click)=updateTask(task)>edit</i>
+        </div>
+        <h3 style="padding-top: 0px;">Task {{task._id.slice(-3)}}</h3>
+        <p>Title : {{task.title}}</p>
+        <p>Status : {{task.completed ? 'Completed' : 'Ongoing'}}</p>
+        <div *ngIf="!task.completed; then ongoing; else completed">
 
+        </div>
+        <ng-template #ongoing>
+          <button class="completedButton" (click)="finish(task)">Incomplete</button>
+        </ng-template>
+        <ng-template #completed>
+          <button class="ongoingButton" (click)="incomplete(task)">Complete</button>
+        </ng-template>
       </div>
-      <ng-template #ongoing>
-        <button class="completedButton" (click)="finish(task)">Incomplete</button>
-      </ng-template>
-      <ng-template #completed>
-        <button class="ongoingButton" (click)="incomplete(task)">Complete</button>
-      </ng-template>
+      <div *ngIf="task.updating" class="taskbox greyTask">
+        <div style="width:100%;display: flex;justify-content: space-between;">
+          <i class="material-icons bin" (click)=deleteTask(task._id)>delete_sweep</i>
+          <i class="material-icons bin" (click)=updateTask(task)>edit</i>
+        </div>
+        <h3 style="padding-top: 0px;">Task {{task._id.slice(-3)}}</h3>
+        <label>Title: </label>
+        <input type="text" #updateTitle />
+        <button class="updateButton" (click)="updateTaskTitle(updateTitle.value)">Update</button>
+      </div>
     </div>
   </div>
 

@@ -13,6 +13,10 @@ const TaskSchema = new mongoose.Schema({
   _userId: {
     type: String,
     required: true
+  },
+  updating: {
+    type: Boolean,
+    default: false
   }
 }, {
 

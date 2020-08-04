@@ -16,7 +16,7 @@ h3 {
 }
 
 .outerContainer {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right,
     #ff8177 0%,
     #ff867a 0%,
@@ -24,7 +24,7 @@ h3 {
     #f99185 52%,
     #cf556c 78%,
     #b12a5b 100%
-  );
+  ); */
 }
 nav {
   background-color: #3b1b27;
@@ -51,6 +51,8 @@ nav {
   width: 100%;
   min-height: 80vh;
   padding-bottom: 20px;
+  background: rgb(180, 159, 159);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 .addTask {
   position: absolute;
@@ -79,12 +81,15 @@ nav {
   flex-direction: column;
   align-items: center;
   border-radius: 15px;
-  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   background-color: rgba(255, 255, 255, 0.4);
   outline: none;
 }
+.greyTask {
+  background-color: rgba(117, 109, 109, 0.4);
+}
 .taskbox:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
   cursor: pointer;
 }
 .taskbox h3 {
@@ -103,6 +108,21 @@ nav {
 }
 .ongoingButton:hover {
   background: rgb(116, 190, 116);
+  cursor: pointer;
+}
+.updateButton {
+  margin-top: 20px;
+  width: 80%;
+  padding: 10px;
+  border: none;
+  background: rgb(209, 172, 6);
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+}
+.updateButton:hover {
+  background: rgb(158, 153, 88);
   cursor: pointer;
 }
 .completedButton {

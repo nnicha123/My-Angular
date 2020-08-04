@@ -42,10 +42,26 @@ export class TaskService {
       completed: !task.completed,
     });
   }
+  updating(task: Task) {
+    return this.webReqService.put(`${task._userId}/tasks/${task._id}`, {
+      updating: !task.updating,
+    });
+  }
+  updateTaskTitle(task: Task, newTitle: string) {
+    return this.webReqService.put(`${task._userId}/tasks/${task._id}`, {
+      title: newTitle,
+      completed: false,
+      updating: !task.updating,
+    });
+  }
   addTask(title: string, userId: string) {
     console.log(`${userId}/tasks`);
     return this.webReqService.post(`${userId}/tasks`, {
       title: title,
     });
+  }
+  deleteTask(userId: string, taskId: string) {
+    console.log(`${userId}/tasks/${taskId}`);
+    return this.webReqService.delete(`${userId}/tasks/${taskId}`);
   }
 }

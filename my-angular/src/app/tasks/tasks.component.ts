@@ -49,4 +49,19 @@ export class TasksComponent implements OnInit {
     });
     this.router.navigate([`${task._userId}/tasks`]);
   }
+  deleteTask(taskId: string) {
+    this.taskService.deleteTask(this.userId, taskId).subscribe((res: Task) => {
+      console.log(res);
+    });
+  }
+  updateTask(task: Task) {
+    this.taskService.updating(task).subscribe((res: Task) => {
+      console.log(res);
+    });
+  }
+  updateTaskTitle(task: Task, newTitle: string) {
+    this.taskService.updateTaskTitle(task, newTitle).subscribe((res: Task) => {
+      console.log(res);
+    });
+  }
 }

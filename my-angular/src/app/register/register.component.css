@@ -4,15 +4,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(
-    to right,
-    #ff8177 0%,
-    #ff867a 0%,
-    #ff8c7f 21%,
-    #f99185 52%,
-    #cf556c 78%,
-    #b12a5b 100%
-  );
+  background: rgb(180, 159, 159);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 .login {
   color: white;
@@ -21,7 +14,7 @@
   height: max-content;
   text-transform: uppercase;
   border-radius: 15px;
-  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   background-color: rgba(255, 255, 255, 0.4);
   display: flex;
   flex-direction: column;
@@ -50,7 +43,7 @@ form {
   padding: 10px;
 }
 button {
-  background: #f99185;
+  background-color: rgb(129, 110, 110);
   padding: 10px 20px;
   border: none;
   color: white;
@@ -73,7 +66,7 @@ button:active {
 
 .form-group input {
   width: 300px;
-  background-color: rgb(216, 135, 135);
+  background-color: rgb(129, 110, 110);
   border: none;
   height: 30px;
   outline: none;
