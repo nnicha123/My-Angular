@@ -1,0 +1,3 @@
+<a class="list-menu-item" *ngFor="let task of tasks" [routerLink]="['/tasks',task._id]" routerLinkActive="is-active">
+  <p>{{task.title}}</p>
+</a>
