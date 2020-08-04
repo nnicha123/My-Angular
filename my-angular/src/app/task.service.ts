@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import { WebRequestService } from './web-request.service';
 import { Task } from './models/task.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
-  constructor(private webReqService: WebRequestService) {}
+  constructor(
+    private webReqService: WebRequestService,
+    private router: Router
+  ) {}
   createTask(title: string, userId: string) {
     return this.webReqService.post(`${userId}/tasks`, { title });
   }
@@ -24,6 +28,24 @@ export class TaskService {
       name,
       username,
       password,
+    });
+  }
+  finishTask(task: Task) {
+    console.log(`${task._userId}/tasks/${task._id}`);
+    return this.webReqService.put(`${task._userId}/tasks/${task._id}`, {
+      completed: !task.completed,
+    });
+  }
+  incompleteTask(task: Task) {
+    console.log(`${task._userId}/tasks/${task._id}`);
+    return this.webReqService.put(`${task._userId}/tasks/${task._id}`, {
+      completed: !task.completed,
+    });
+  }
+  addTask(title: string, userId: string) {
+    console.log(`${userId}/tasks`);
+    return this.webReqService.post(`${userId}/tasks`, {
+      title: title,
     });
   }
 }

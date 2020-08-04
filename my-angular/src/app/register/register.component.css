@@ -15,15 +15,22 @@
   );
 }
 .login {
+  color: white;
   width: 400px;
   padding: 25px;
   height: max-content;
+  text-transform: uppercase;
   border-radius: 15px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
+  outline: none;
+}
+.login:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 .login h3 {
   color: white;
@@ -43,12 +50,22 @@ form {
   padding: 10px;
 }
 button {
-  background: #812748;
+  background: #f99185;
   padding: 10px 20px;
   border: none;
   color: white;
   border-radius: 5px;
   font-size: 20px;
+  outline: none;
+}
+button:hover {
+  background: #b12a5b;
+  cursor: pointer;
+  transition: all ease 0.2s;
+  transform: scale(1.1);
+}
+button:active {
+  transform: scale(0.9);
 }
 .form-group {
   margin: 10px 10px;
@@ -56,9 +73,14 @@ button {
 
 .form-group input {
   width: 300px;
-  background-color: rgb(240, 238, 238);
+  background-color: rgb(216, 135, 135);
   border: none;
   height: 30px;
+  outline: none;
+}
+.form-group input:focus {
+  background-color: #b12a5b;
+  color: white;
 }
 .password {
   margin-bottom: 30px;

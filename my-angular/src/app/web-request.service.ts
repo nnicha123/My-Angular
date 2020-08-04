@@ -15,4 +15,9 @@ export class WebRequestService {
   post(uri: string, items: Object) {
     return this.http.post(`${this.ROOT_URL}/${uri}`, items);
   }
+  put(uri: string, items: Object) {
+    console.log(`${uri}`);
+    console.log(`${this.ROOT_URL}/${uri}`);
+    return this.http.put(`${this.ROOT_URL}/${uri}`, items);
+  }
 }

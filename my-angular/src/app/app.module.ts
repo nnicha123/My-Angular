@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NewTaskComponent } from './new-task/new-task.component';
 
 @NgModule({
-  declarations: [AppComponent, TasksComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, TasksComponent, LoginComponent, RegisterComponent, NewTaskComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

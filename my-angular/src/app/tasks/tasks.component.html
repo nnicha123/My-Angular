@@ -1,13 +1,26 @@
 <nav class="header" style="text-align: center;">
   <h1>Welcome {{name}}</h1>
   <h3>Here are your tasks!</h3>
-  <button (click)="userLogout()">Logout</button>
 </nav>
-<div class="outerContainer">
-  <div class="taskbox" *ngFor="let task of tasks" [routerLink]="['/tasks',task._id]" routerLinkActive="is-active">
-    <h3>Task {{task._id.slice(-3)}}</h3>
-    <p>Title : {{task.title}}</p>
-    <p>Status : {{task.completed ? 'Completed' : 'Ongoing'}}</p>
-    <button>Complete</button>
+<div class="outermostContainer">
+  <button (click)="userLogout()" class="logoutButton">Logout</button>
+  <div class="outerContainer">
+    <div class="taskbox" *ngFor="let task of tasks" [routerLink]="['/tasks',task._id]" routerLinkActive="is-active">
+      <h3>Task {{task._id.slice(-3)}}</h3>
+      <p>Title : {{task.title}}</p>
+      <p>Status : {{task.completed ? 'Completed' : 'Ongoing'}}</p>
+      <div *ngIf="!task.completed; then ongoing; else completed">
+
+      </div>
+      <ng-template #ongoing>
+        <button class="completedButton" (click)="finish(task)">Incomplete</button>
+      </ng-template>
+      <ng-template #completed>
+        <button class="ongoingButton" (click)="incomplete(task)">Complete</button>
+      </ng-template>
+    </div>
   </div>
+
 </div>
+
+<div class="addTask" routerLink="../newTask" style="outline: none;">+</div>

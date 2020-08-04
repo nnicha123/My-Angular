@@ -1,0 +1,11 @@
+<link rel="stylesheet">
+<div class="loginOuterDiv">
+  <div class="login">
+    <h3>ADD TASK</h3>
+    <div class="form-group">
+      <div>Task Information</div>
+      <input type="text" #newTask />
+    </div>
+    <button style="margin-top: 20px;font-weight: bold;" (click)="addTask(newTask.value)">ADD</button>
+  </div>
+</div>
