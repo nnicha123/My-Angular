@@ -135,7 +135,7 @@ nav {
   transition: all ease 0.2s;
 }
 .logoutButton:active {
-  transform: scale(0.9);
+  /* transform: scale(0.9); */
 }
 .material-icons.bin {
   font-size: 25px;
