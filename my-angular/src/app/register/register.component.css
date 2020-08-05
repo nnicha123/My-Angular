@@ -1,3 +1,11 @@
+nav {
+  background: rgb(129, 110, 110);
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
 .loginOuterDiv {
   min-height: 100vh;
   height: max-content;

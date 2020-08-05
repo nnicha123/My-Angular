@@ -51,7 +51,7 @@ export class TaskService {
     return this.webReqService.put(`${task._userId}/tasks/${task._id}`, {
       title: newTitle,
       completed: false,
-      updating: !task.updating,
+      updating: false,
     });
   }
   addTask(title: string, userId: string) {

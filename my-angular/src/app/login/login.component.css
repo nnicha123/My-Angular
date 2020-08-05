@@ -2,8 +2,16 @@
   margin: 0;
   padding: 0;
 }
+nav {
+  background: rgb(129, 110, 110);
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
 .loginOuterDiv {
-  min-height: 100vh;
+  min-height: 90vh;
   height: max-content;
   display: flex;
   justify-content: center;

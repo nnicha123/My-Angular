@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../task.service';
 import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(private taskService: TaskService) {}
+  constructor(private taskService: TaskService, private router: Router) {}
 
   ngOnInit(): void {}
   registerUser(name: string, username: string, password: string) {
@@ -16,6 +17,7 @@ export class RegisterComponent implements OnInit {
       .registerUser(name, username, password)
       .subscribe((res: HttpResponse<any>) => {
         console.log(res);
+        this.router.navigate([`/login`]);
       });
   }
 }

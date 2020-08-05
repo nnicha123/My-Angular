@@ -53,6 +53,7 @@ nav {
   padding-bottom: 20px;
   background: rgb(180, 159, 159);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  outline: none;
 }
 .addTask {
   position: absolute;
@@ -167,4 +168,19 @@ nav {
 .material-icons.bin:active {
   color: #a81949;
   transform: scale(0.9);
+}
+.inner-no-task {
+  height: fit-content;
+  margin-top: 100px;
+  padding: 30px;
+  border-radius: 8px;
+  background: #3b1b27;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+.updateInput:focus {
+  background: rgb(31, 16, 16);
+  color: white;
+  border: none;
 }

@@ -5,14 +5,15 @@
 </nav>
 <div class="outermostContainer">
   <button (click)="userLogout()" class="logoutButton">Logout</button>
-  <div class="outerContainer">
-    <div *ngFor="let task of tasks" [routerLink]="['/tasks',task._id]" routerLinkActive="is-active">
-      <div *ngIf="!task.updating" class="taskbox">
+  <div class="outerContainer" *ngIf="tasks.length > 0">
+    <div *ngFor="let task of tasks" [routerLink]="['/tasks',task._id]" routerLinkActive="is-active"
+      style="height:max-content;width: max-content;outline: none;">
+      <div class="taskbox" *ngIf="!task.updating">
         <div style=" width:100%;display: flex;justify-content: space-between;">
           <i class="material-icons bin" (click)=deleteTask(task._id)>delete_sweep</i>
           <i class="material-icons bin" (click)=updateTask(task)>edit</i>
         </div>
-        <h3 style="padding-top: 0px;">Task {{task._id.slice(-3)}}</h3>
+        <h3 style="padding-top: 0px;font-weight: bold;">Task {{task._id.slice(-3)}}</h3>
         <p>Title : {{task.title}}</p>
         <p>Status : {{task.completed ? 'Completed' : 'Ongoing'}}</p>
         <div *ngIf="!task.completed; then ongoing; else completed">
@@ -25,16 +26,21 @@
           <button class="ongoingButton" (click)="incomplete(task)">Complete</button>
         </ng-template>
       </div>
-      <div *ngIf="task.updating" class="taskbox greyTask">
+      <div class="taskbox greyTask" *ngIf="task.updating">
         <div style="width:100%;display: flex;justify-content: space-between;">
           <i class="material-icons bin" (click)=deleteTask(task._id)>delete_sweep</i>
           <i class="material-icons bin" (click)=updateTask(task)>edit</i>
         </div>
-        <h3 style="padding-top: 0px;">Task {{task._id.slice(-3)}}</h3>
+        <h3 style="padding-top: 0px;font-weight: bold;">Task {{task._id.slice(-3)}}</h3>
         <label>Title: </label>
-        <input type="text" #updateTitle />
-        <button class="updateButton" (click)="updateTaskTitle(updateTitle.value)">Update</button>
+        <input type="text" #updateTitle [value]="task.title" style="outline: none;" class="updateInput" />
+        <button class="updateButton" (click)="updateTaskTitle(task,updateTitle.value)">Update</button>
       </div>
+    </div>
+  </div>
+  <div *ngIf="tasks.length == 0" class="outerContainer">
+    <div class="inner-no-task">
+      You currently have no tasks! Click the add button to add tasks
     </div>
   </div>
 
