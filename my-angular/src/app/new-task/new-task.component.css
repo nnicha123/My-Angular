@@ -1,10 +1,19 @@
 .loginOuterDiv {
-  min-height: 100vh;
+  min-height: 80vh;
   height: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
   background: rgb(180, 159, 159);
+}
+h1,
+h3 {
+  margin: 0;
+  padding-top: 30px;
+}
+nav h1,
+nav h3 {
+  color: white;
 }
 .login {
   width: 400px;
@@ -78,4 +87,23 @@ button:active {
   margin-bottom: 10px;
   font-weight: bold;
   font-family: sans-serif;
+}
+nav {
+  background-color: #3b1b27;
+  text-transform: uppercase;
+}
+.logoutButton {
+  background: rgb(31, 16, 16);
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  font-size: 20px;
+  outline: none;
+  display: block;
+  position: relative;
+}
+.logoutButton:hover {
+  background: #b12a5b;
+  cursor: pointer;
+  transition: all ease 0.2s;
 }

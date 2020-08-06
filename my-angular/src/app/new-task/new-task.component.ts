@@ -29,4 +29,8 @@ export class NewTaskComponent implements OnInit {
       this.router.navigate([`/${res._userId}/tasks`]);
     });
   }
+  userLogout() {
+    localStorage.removeItem('NAME');
+    this.router.navigate([`/login`]);
+  }
 }

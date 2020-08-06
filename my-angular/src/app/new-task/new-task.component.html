@@ -1,11 +1,17 @@
 <link rel="stylesheet">
-<div class="loginOuterDiv">
-  <div class="login">
-    <h3>ADD TASK</h3>
-    <div class="form-group">
-      <div>Task Information</div>
-      <input type="text" #newTask />
+<nav class="header" style="text-align: center;">
+  <h1 style="padding:30px;font-weight: bold;letter-spacing: 2px;">Create your tasks!</h1>
+</nav>
+<div style="display: flex;flex-direction: column;">
+  <button (click)="userLogout()" class="logoutButton" style="border-radius: 0;">Logout</button>
+  <div class="loginOuterDiv">
+    <div class="login">
+      <h3>ADD TASK</h3>
+      <div class="form-group">
+        <div>Task Information</div>
+        <input type="text" #newTask />
+      </div>
+      <button style="margin-top: 20px;font-weight: bold;" (click)="addTask(newTask.value)">ADD</button>
     </div>
-    <button style="margin-top: 20px;font-weight: bold;" (click)="addTask(newTask.value)">ADD</button>
   </div>
 </div>

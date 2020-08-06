@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { NewTaskComponent } from './new-task/new-task.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: ':userId/tasks', component: TasksComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
